@@ -18,6 +18,10 @@
     padding: 0;
     cursor: pointer;
   }
+
+  &__btn-menu {
+    display: none;
+  }
 }
 
 .logo {
@@ -265,12 +269,17 @@
 
   &__list {
     display: flex;
+    overflow-x: auto; //для адаптива
+  }
+
+  &__item {
+    position: relative;
+    padding-right: 8px;
   }
 
   &__item::after {
     content: '/';
-    margin-left: -4px;
-    margin-right: 4px;
+    position: absolute;
   }
 
   &__item:last-child::after {
@@ -509,7 +518,7 @@
     height: 100%;
   }
 
-  &__item-production {
+  &__item--production {
     margin-left: 317px;
 
     &::after {
@@ -523,11 +532,11 @@
     }
   }
 
-  &__item-production, &__item-consultation {
+  &__item--production, &__item--consultation {
     padding-bottom: 38px;
   }
 
-  &__item-measuring {
+  &__item--measuring {
     padding-top: 38px;
     margin-left: 305px;
 
@@ -1399,3 +1408,5 @@
     cursor: pointer;
   }
 }
+
+@import 'media';
